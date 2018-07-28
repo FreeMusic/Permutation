@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Arithmetic.h"
 
 @interface ViewController ()
 
@@ -17,7 +18,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    NSLog(@"%ld", [self lotterySSQPTRecursiveWithRedBalls:23 blueBalls:3]);
+    //阶乘
+    NSUInteger number = arithmetic(40);
+    NSLog(@"递归计算阶乘%ld", number);
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 200, 350, 60)];
+    label.text = [NSString stringWithFormat:@"%ld", number];
+    [self.view addSubview:label];
+    //循环
+    NSLog(@"%ld", [self lotterySSQPTRecursiveWithRedBalls:33 blueBalls:3]);
 }
 /**
  双色球 普通选注
